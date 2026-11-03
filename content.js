@@ -55,7 +55,7 @@ window.CONTENT = {
 
   stack: [
     { key: 'languages', value: 'C++, Python, Bash' },
-    { key: 'robotics', value: 'ROS2' },
+    { key: 'robotics', value: 'ROS2, Gazebo, RViz' },
     { key: 'tools', value: 'Linux, Git, Tailscale, Ollama' }
   ],
 
