@@ -1,0 +1,74 @@
+/* colours: light is black on white, dark swaps them (data-theme is set in index.html/terminal.js) */
+:root { color-scheme: light; --bg: #ffffff; --ink: #000000; --banner-cols: 35; }
+:root[data-theme="dark"] { color-scheme: dark; --bg: #000000; --ink: #ffffff; }
+ 
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+ 
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;          /* phones where the address bar moves */
+  background: var(--bg);
+  color: var(--ink);
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.4;
+  cursor: text;
+}
+ 
+#term { padding: 2.75rem clamp(1rem, 3vw, 2.5rem) 3rem; }
+ 
+/* pre-wrap keeps spaces so columns line up */
+p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+ 
+a { color: inherit; text-underline-offset: .2em; }
+a:hover { background: var(--ink); color: var(--bg); text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
+ 
+/* font size scales with screen width so the art always fits
+   --banner-cols is set by terminal.js, 0.6 is roughly letter width vs height */
+.banner {
+  margin: .75rem 0 .9rem;
+  font-family: monospace;
+  line-height: 1.1;
+  white-space: pre;
+  font-size: min(20px, calc((100vw - 2.5rem) / (var(--banner-cols) * 0.6)));
+}
+ 
+.row { display: flex; align-items: baseline; }
+.ps1 { flex: none; white-space: pre; }
+ 
+/* invisible input so it looks like typing on the page */
+.row input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  caret-color: var(--ink);
+}
+ 
+.theme {
+  position: fixed;
+  top: .6rem;
+  right: .8rem;
+  z-index: 5;
+  padding: .1rem .4rem;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+}
+.theme:hover { background: var(--ink); color: var(--bg); }
+ 
+/* 16px on phones or iphones zoom in when the input is tapped */
+@media (max-width: 820px) {
+  body { font-size: 16px; }
+}
