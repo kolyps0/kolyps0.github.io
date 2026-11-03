@@ -62,7 +62,7 @@ window.CONTENT = {
   /* TODO add email: { label: 'email', text: 'me@example.com', url: 'mailto:me@example.com' } */
   links: [
     { label: 'github', text: 'github.com/kolyps0', url: 'https://github.com/kolyps0' },
-    { label: 'x', text: 'x.com/kolyps0', url: 'https://x.com/kolyps0' },
+    { label: 'x(twitter)', text: 'x.com/kolyps0', url: 'https://x.com/kolyps0' },
     { label: 'letterboxd', text: 'letterboxd.com/kolypso', url: 'https://letterboxd.com/kolypso' }
   ],
 
