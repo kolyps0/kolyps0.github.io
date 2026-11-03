@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
 
+<!-- metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>guest@kolyps0: ~</title>
+<meta name="description" content="kolyps0 (kailah): robotics, machine learning,
+  security and self-hosted systems. An interactive terminal portfolio.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
+  viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath
+  d='M7 10l7 6-7 6' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='M17 23h9'
+  stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+
+<!-- load light/dark mode before page shows, so themes dont flash on startup -->
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') {
+      t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+
+<!-- page styling -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- terminal code -->
+<main id="term" aria-label="Terminal">
+  <div id="out" role="log" aria-live="polite"></div>
+  <div class="row" id="inrow">
+    <span class="ps1" id="ps1"></span>
+    <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off"
+      spellcheck="false" aria-label="terminal command">
+  </div>
+
+  <!-- show if javascript off, terminal cant run without so show links instead -->
+  <noscript>
+    <p>kolyps0 (kailah): robotics, machine learning, security and self-hosted systems</p>
+    <p>this page is an interactive terminal and needs JavaScript. 
+      elsewhere: <a href="https://github.com/kolyps0">GitHub</a>, <a href="https://x.com/kolyps0">X(Twitter)</a>, 
+      <a href="https://letterboxd.com/kolypso">Letterboxd</a>.</p>
+  </noscript>
+</main>
+
+<!-- light/dark mode button in top right corner -->
+<button class="theme" id="theme-btn" type="button"></button>
+ 
+<!-- plain script tags, content.js runs first as terminal.js reads from it -->
+<script src="content.js"></script>
+<script src="terminal.js"></script>
+</body>
+</html>
