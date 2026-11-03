@@ -1,5 +1,5 @@
 ### kolyps0.github.io
-my portfolio, built as an interactive terminal. visit it at [kolyps0.github.io](kolyps0.github.io) and type `help`. plain HTML, CSS and JavaScript, no build step and no dependancies.
+my portfolio, built as an interactive terminal. visit it at [kolyps0.github.io](https://kolyps0.github.io) and type `help`. plain HTML, CSS and JavaScript, no build step and no dependancies.
 
 **files**
 |file|what it does|
